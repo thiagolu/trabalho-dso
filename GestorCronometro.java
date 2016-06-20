@@ -10,8 +10,7 @@ class GestorCronometro implements ActionListener {
     SALVAR = "SALVAR",
     CARREGAR = "CARREGAR";
 
-    PARAR = "PARAR";
-  private Cronometro cronometro;
+    private Cronometro cronometro;
   GestorCronometro(Cronometro cronometro) {
     this.cronometro = cronometro;
   }
@@ -38,3 +37,8 @@ class GestorCronometro implements ActionListener {
 
 
 //boraaa
+1º git add . (pra todos)
+2º git commit (comments)
+3º git push 
+ou p pegar
+git pull origin master
