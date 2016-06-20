@@ -49,11 +49,26 @@ class Main {
   }
   void mk_grupoCronometragem(JPanel q, ActionListener listener) {
     JButton b;
+    b = new JButton("Start");
     b = new JButton(">");
     q.add(b);
     b.addActionListener(listener);
     b.setActionCommand(GestorCronometro.INICIAR);
 
+    b = new JButton("Stop");
+    q.add(b);
+    b.addActionListener(listener);
+    b.setActionCommand(GestorCronometro.PARAR);
+
+    b = new JButton("Save");
+    q.add(b);
+    b.addActionListener(listener);
+    b.setActionCommand(GestorCronometro.SALVAR);
+
+    b = new JButton("Load");
+    q.add(b);
+    b.addActionListener(listener);
+    b.setActionCommand(GestorCronometro.CARREGAR);
     b = new JButton("-");
     q.add(b);
     b.addActionListener(listener);

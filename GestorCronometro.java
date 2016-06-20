@@ -6,6 +6,10 @@ import java.awt.event.*;
 class GestorCronometro implements ActionListener {
   static String
     INICIAR = "INICIAR",
+    PARAR = "PARAR",
+    SALVAR = "SALVAR",
+    CARREGAR = "CARREGAR";
+
     PARAR = "PARAR";
   private Cronometro cronometro;
   GestorCronometro(Cronometro cronometro) {
@@ -17,8 +21,20 @@ class GestorCronometro implements ActionListener {
        cronometro.zerar();
        cronometro.avancar();
     }
+    if (cmd.equals(PARAR)) {
+       cronometro.pausar();
+    }
+     if (cmd.equals(SALVAR)) {
+
+    }
+    else if (cmd.equals(CARREGAR)) {
+       
+    }
     else if (cmd.equals(PARAR)) {
        cronometro.pausar();
      }
   }
-}//
+}
+
+
+//boraaa
