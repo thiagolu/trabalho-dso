@@ -27,18 +27,10 @@ class GestorCronometro implements ActionListener {
 
     }
     else if (cmd.equals(CARREGAR)) {
-       
+
     }
     else if (cmd.equals(PARAR)) {
        cronometro.pausar();
      }
   }
 }
-
-
-//boraaa
-1º git add . (pra todos)
-2º git commit (comments)
-3º git push 
-ou p pegar
-git pull origin master
