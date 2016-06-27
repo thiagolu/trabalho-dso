@@ -11,7 +11,6 @@ Criar um sistema de cronometragem para um pequeno evento de corrida.
 - Marcar o tempo
   - Tempo total
   - Início da corrida
-  - Separação por voltas
 
 
 - Cadastrar corredores
@@ -20,4 +19,17 @@ Criar um sistema de cronometragem para um pequeno evento de corrida.
 - Resultado
 
 [Link para Projeto default](http://www.inf.ufsc.br/~coelho/aula/poo/transpas/notas-de-aula/cronometro.html)
->>>>>>> 9e93ae812a2376555eb6a5bc40ce72d6debf0de2
+
+
+--------------------------
+
+## Implementar
+
+- [ ] Importação de arquivo CSV
+- [ ] Organizar dados
+  - Cadastro de corredores
+- [ ] Marcação de tempo
+  - Iniciar Contagem de tempo
+  - Finalizar Contagem de tempo
+  - Atribuir para corredor
+- Resultado
