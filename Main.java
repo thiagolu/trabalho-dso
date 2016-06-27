@@ -10,6 +10,10 @@ class Main {
   }
 
   Main() {
+    ImportadorCSV imp = new ImportadorCSV();
+    imp.parsearConteudoComVirgula();
+
+
     JFrame f = new JFrame();
     JPanel tela = new JPanel();
     f.setContentPane(tela);
