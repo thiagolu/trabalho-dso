@@ -7,13 +7,14 @@ class Cronometro implements ActionListener {
   private int n = 0;
   private JLabel r;
   private javax.swing.Timer d; //disparos
-  
+
   Cronometro(JLabel r) {
     this.r = r;
-    d = new Timer(1000, this);//periodos de 1 seg = 1000 ms
+    d = new Timer(1, this);//periodos de 1 seg = 1000 ms
   }
 
-  public void disparar() { debug("disparar");
+  public void disparar() {
+
     n = n + 1;
     atualizar();
   }
@@ -31,7 +32,9 @@ class Cronometro implements ActionListener {
     parado = true;
   }
   void atualizar() {
-    r.setText(""+n);
+    ConversorTempo con = new ConversorTempo();
+
+    r.setText(con.converter(n));
   }
   public void actionPerformed(ActionEvent e) {
        disparar();

@@ -10,8 +10,8 @@ class GestorCronometro implements ActionListener {
     SALVAR = "SALVAR",
     CARREGAR = "CARREGAR";
 
-    private Cronometro cronometro;
-  GestorCronometro(Cronometro cronometro) {
+  private Cronometro cronometro;
+    GestorCronometro(Cronometro cronometro) {
     this.cronometro = cronometro;
   }
   public void actionPerformed(ActionEvent e) {
