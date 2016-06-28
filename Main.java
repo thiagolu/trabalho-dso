@@ -11,7 +11,7 @@ class Main {
 
   Main() {
     ImportadorCSV imp = new ImportadorCSV();
-    imp.parsearConteudoComVirgula();
+    imp.importarCSV();
 
 
     JFrame f = new JFrame();

@@ -1,4 +1,4 @@
-class Corredor{
+class Corredor {
 
 	private String nome;
 	private int id;
@@ -16,5 +16,5 @@ class Corredor{
 		return this.id;
 	}
 
-	
+
 }
