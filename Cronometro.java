@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-//exem01
+
 class Cronometro implements ActionListener {
   private int n = 0;
   private JLabel r;

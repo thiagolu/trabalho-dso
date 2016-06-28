@@ -8,7 +8,7 @@ class ImportadorCSV {
   private BufferedReader bufferReader;
 
   public ImportadorCSV() {
-    this.caminhoArquivo = "/home/thiago/Documentos/Aulas-Ufsc/DSO/trabalho-dso/trabalho-dso/corredores.csv";
+    this.caminhoArquivo = "D:/trabalho-dso/corredores.csv";
     this.bufferReader = null;
   }
 
@@ -22,7 +22,7 @@ class ImportadorCSV {
 
       while ((linha = bufferReader.readLine()) != null) {
         String[] corredores = linha.split(separadorCSV);
-        System.out.println("Nome [nome= " + corredores[0]+ " , idade=" + corredores[1] + "]");
+        System.out.println("Nome [nome = " + corredores[0]+ " , idade = " + corredores[1] + "]");
       }
     } catch (FileNotFoundException e) {
       e.printStackTrace();
