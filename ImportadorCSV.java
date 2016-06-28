@@ -11,8 +11,9 @@ class ImportadorCSV {
     this.caminhoArquivo = "/home/thiago/Documentos/Aulas-Ufsc/DSO/trabalho-dso/trabalho-dso/corredores.csv";
   }
 
-  public void importarCSV() {
+  public HashMap<String, ArrayList<String>> importarCSV() {
     CSVParser arquivoCSV = new CSVParser();
-    arquivoCSV.parsearConteudoComVirgula(caminhoArquivo);
+
+    return arquivoCSV.parsearConteudoComVirgula(caminhoArquivo);
   }
 }

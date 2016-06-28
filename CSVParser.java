@@ -12,23 +12,19 @@ class CSVParser {
     this.arquivoCSV = null;
   }
 
-  public void parsearConteudoComVirgula(String caminhoArquivo){
+  public HashMap<String, ArrayList<String>> parsearConteudoComVirgula(String caminhoArquivo){
     String linha = "";
     String separadorCSV = ",";
-    HashMap<String, String[]> hm = new HashMap<String, String[]>();
+    HashMap<String, ArrayList<String>> cadastroCorredores = new HashMap<String, ArrayList<String>>();
 
     try {
       this.arquivoCSV = new BufferedReader(new FileReader(caminhoArquivo));
 
       while ((linha = this.arquivoCSV.readLine()) != null) {
         String[] corredores = linha.split(separadorCSV);
-        String nome = corredores[0];
-        String idade = corredores[1];
-        hm.put(corredores[2], corredores);
-        System.out.println("Nome [nome= " + corredores[0]+ " , idade=" + corredores[1] + "]");
+        cadastroCorredores.put(corredores[2], new ArrayList<String>(Arrays.asList(corredores[0],corredores[1])));
       }
-      System.out.println(hm.entrySet());
-      System.out.println(hm);
+      System.out.println(cadastroCorredores.entrySet());
 
     } catch (FileNotFoundException e) {
       e.printStackTrace();
@@ -43,6 +39,7 @@ class CSVParser {
         }
       }
     }
+    return cadastroCorredores;
   }
 
 }
