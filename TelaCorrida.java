@@ -77,22 +77,22 @@ public class TelaCorrida extends JFrame{
     b = new JButton("Save Corredor 1");
     q.add(b);
     b.addActionListener(listener);
-    b.setActionCommand(GestorCronometro.SALVAR1);
+    b.setActionCommand(GestorCronometro.SALVAR);
 
     b = new JButton("Save Corredor 2");
     q.add(b);
     b.addActionListener(listener);
-    b.setActionCommand(GestorCronometro.SALVAR2);
+    b.setActionCommand(GestorCronometro.SALVAR);
 
     b = new JButton("Save Corredor 3");
     q.add(b);
     b.addActionListener(listener);
-    b.setActionCommand(GestorCronometro.SALVAR3);
+    b.setActionCommand(GestorCronometro.SALVAR);
 
     b = new JButton("Save Corredor 4");
     q.add(b);
     b.addActionListener(listener);
-    b.setActionCommand(GestorCronometro.SALVAR4);
+    b.setActionCommand(GestorCronometro.SALVAR);
 
     b = new JButton("Finalizar");
     q.add(b);

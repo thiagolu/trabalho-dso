@@ -61,8 +61,7 @@ public class TelaInicial extends JFrame{
     @Override
     public void actionPerformed(ActionEvent e) {
       if (e.getActionCommand().equals(btArquivo.getActionCommand())) {
-        ImportadorCSV imp = new ImportadorCSV();
-        imp.parsearConteudoComVirgula();
+        System.out.println("Something");
       } else if (e.getActionCommand().equals(btCriarEvento.getActionCommand())) {
         TelaCorrida telaCorrida = new TelaCorrida();
         telaCorrida.inicializar();
