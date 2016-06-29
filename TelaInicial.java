@@ -61,7 +61,8 @@ public class TelaInicial extends JFrame{
     @Override
     public void actionPerformed(ActionEvent e) {
       if (e.getActionCommand().equals(btArquivo.getActionCommand())) {
-        System.out.println("Something");
+        LeitorArquivos arq = new LeitorArquivos();
+        arq.initialize();
       } else if (e.getActionCommand().equals(btCriarEvento.getActionCommand())) {
         TelaCorrida telaCorrida = new TelaCorrida();
         telaCorrida.inicializar();
