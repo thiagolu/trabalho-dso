@@ -5,37 +5,21 @@ import javax.swing.*;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.*;
 
-class LeitorArquivos extends JPanel
-implements ActionListener {
-  JButton escolher;
 
+class LeitorArquivosController implements ActionListener {
   JFileChooser manipuladorArquivo;
   String tituloManipuladorArquivo;
   String caminhoArquivo;
+  LeitorArquivos leitor;
 
 
-  public LeitorArquivos() {
-    escolher = new JButton("Escoher Arquivo");
-    escolher.addActionListener(this);
-    add(escolher);
+  public LeitorArquivosController(LeitorArquivos leitor) {
+    this.tituloManipuladorArquivo = "AAADSADFF ";
+    this.leitor = leitor;
   }
 
+  public void inicializarLeitorArquivos() {
 
-  public void initialize() {
-    JFrame frame = new JFrame("");
-    LeitorArquivos panel = new LeitorArquivos();
-    frame.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent e) {
-        System.exit(0);
-      }
-    });
-    frame.getContentPane().add(panel,"Center");
-    frame.setSize(panel.getPreferredSize());
-    frame.setVisible(true);
-  }
-
-  public Dimension getPreferredSize(){
-    return new Dimension(200, 200);
   }
 
   public void actionPerformed(ActionEvent e) {
@@ -46,9 +30,14 @@ implements ActionListener {
 
     manipuladorArquivo.setAcceptAllFileFilterUsed(false);
 
-    if (manipuladorArquivo.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+    if (e.getActionCommand().equals("Mostrar")) {
+      leitor.caminhoArquivo = this.caminhoArquivo;
+      System.out.println(leitor.caminhoArquivo);
+    }
+    else if (manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
       this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
       System.out.println(this.caminhoArquivo);
+      System.out.println("AAAAAA FOI?"+this.caminhoArquivo);
     }
     else {
       System.out.println("No Selection ");

@@ -24,7 +24,6 @@ class CSVParser {
         String[] corredores = linha.split(separadorCSV);
         cadastroCorredores.put(corredores[2], new ArrayList<String>(Arrays.asList(corredores[0],corredores[1])));
       }
-      System.out.println(cadastroCorredores.entrySet());
 
     } catch (FileNotFoundException e) {
       e.printStackTrace();

@@ -6,14 +6,17 @@ import java.io.IOException;
 
 class ImportadorCSV {
   private String caminhoArquivo;
+  private HashMap<String, ArrayList<String>> corredores;
 
-  public ImportadorCSV() {
-    this.caminhoArquivo = "/home/thiago/Documentos/Aulas-Ufsc/DSO/trabalho-dso/trabalho-dso/corredores.csv";
+  public ImportadorCSV(String caminho) {
+    this.caminhoArquivo = caminho;
   }
 
   public HashMap<String, ArrayList<String>> importarCSV() {
     CSVParser arquivoCSV = new CSVParser();
 
-    return arquivoCSV.parsearConteudoComVirgula(caminhoArquivo);
+    corredores = arquivoCSV.parsearConteudoComVirgula(caminhoArquivo);
+
+    return corredores;
   }
 }
