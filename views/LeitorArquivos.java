@@ -12,14 +12,15 @@ class LeitorArquivos extends JPanel {
   JFileChooser manipuladorArquivo;
   String tituloManipuladorArquivo;
   public String caminhoArquivo;
+  private LeitorArquivosController leitorArquivosController;
+  JFrame frame;
 
-
-  public LeitorArquivos() {
-
+  public LeitorArquivos(LeitorArquivosController leitorArquivosController) {
+    this.leitorArquivosController = leitorArquivosController;
     escolher = new JButton("Escoher Arquivo");
     mostrar = new JButton("Mostrar");
-    add(escolher);
-    add(mostrar);
+    this.frame = new JFrame("");
+
   }
 
   public void closeWindow(JFrame frame ) {
@@ -31,21 +32,34 @@ class LeitorArquivos extends JPanel {
   }
 
   public void initialize() {
-    JFrame frame = new JFrame("");
-    LeitorArquivosController leitor = new LeitorArquivosController(this);
-    escolher.addActionListener(leitor);
-    mostrar.addActionListener(leitor);
+    leitorArquivosController.inicializarLeitorArquivos(this);
+
+    // escolher.addActionListener(leitor);
+    // mostrar.addActionListener(leitor);
+    mostrar.setActionCommand("Mostrar");
+    escolher.setActionCommand("Escolher Arquivo");
     closeWindow(frame);
     frame.getContentPane().add(this,"Center");
     frame.setSize(this.getPreferredSize());
     frame.setVisible(true);
+    add(escolher);
+    add(mostrar);
   }
 
   public Dimension getPreferredSize(){
     return new Dimension(200, 200);
   }
 
-  public String retornaCaminhoArquivo(JFrame frame) {
+  public String retornaCaminhoArquivo() {
     return caminhoArquivo;
+  }
+
+
+  public void addActionListners(ActionListener e){
+    escolher.setActionCommand("Escolher Arquivo");
+    mostrar.addActionListener(e);
+    mostrar.setActionCommand("Mostrar");
+    escolher.addActionListener(e);
+
   }
 }

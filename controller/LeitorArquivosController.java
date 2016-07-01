@@ -6,38 +6,48 @@ import javax.swing.SwingUtilities;
 import javax.swing.filechooser.*;
 
 
-class LeitorArquivosController implements ActionListener {
+class LeitorArquivosController {
   JFileChooser manipuladorArquivo;
   String tituloManipuladorArquivo;
   String caminhoArquivo;
-  LeitorArquivos leitor;
+  TelaInicialController telaInicialController;
 
-
-  public LeitorArquivosController(LeitorArquivos leitor) {
+  public LeitorArquivosController(TelaInicialController telaInicialController) {
     this.tituloManipuladorArquivo = "AAADSADFF ";
-    this.leitor = leitor;
+    this.telaInicialController = telaInicialController;
   }
 
-  public void inicializarLeitorArquivos() {
-
+  public void inicializarLeitorArquivos(LeitorArquivos leitorArquivos) {
+    leitorArquivos.addActionListners(new GerenciadorEventos());
   }
 
-  public void actionPerformed(ActionEvent e) {
-    manipuladorArquivo = new JFileChooser();
-    manipuladorArquivo.setCurrentDirectory(new java.io.File("."));
-    manipuladorArquivo.setDialogTitle(tituloManipuladorArquivo);
-    manipuladorArquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
-    manipuladorArquivo.setAcceptAllFileFilterUsed(false);
-    if(manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
-      if (e.getActionCommand().equals("123")) {
-        System.out.println(leitor.caminhoArquivo);
-        leitor.caminhoArquivo = this.caminhoArquivo;
-      }
-      this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
+  private class GerenciadorEventos implements ActionListener{
+    JFileChooser manipuladorArquivo;
+
+    public GerenciadorEventos() {
+      this.manipuladorArquivo = new JFileChooser();
+
     }
-    else {
-      System.out.println("No Selection ");
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+      manipuladorArquivo.setCurrentDirectory(new java.io.File("."));
+      manipuladorArquivo.setDialogTitle(tituloManipuladorArquivo);
+      manipuladorArquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
+      manipuladorArquivo.setAcceptAllFileFilterUsed(false);
+      if (e.getActionCommand().equals("Escolher Arquivo")) {
+        // this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
+        System.out.println("No Selection ");
+
+      }
+      if(manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
+      }
+      else {
+        System.out.println("No Selection ");
+      }
     }
   }
 }

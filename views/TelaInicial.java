@@ -12,15 +12,18 @@ import javax.swing.*;
 
 
 public class TelaInicial extends JFrame{
-  public LeitorArquivos leitorArquivos;
 
   private Container container;
+
   private JButton btArquivo;
   private JButton btCriarEvento;
   private JButton btEscolher;
   private JButton btMostrar;
+
   private JLabel rotuloP;
+
   private String caminho;
+  public LeitorArquivos leitorArquivos;
   private TelaInicialController telaInicialController;
 
   public TelaInicial(TelaInicialController telaInicialController){

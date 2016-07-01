@@ -17,7 +17,7 @@ class TelaInicialController {
   TelaInicial tela;
 
   public TelaInicialController() {
-    this.leitorArquivos = new LeitorArquivos();
+    this.leitorArquivos = new LeitorArquivos(new LeitorArquivosController(this));
     this.telaCorrida = new TelaCorrida();
     this.tela = new TelaInicial(this);
     }
@@ -29,9 +29,10 @@ class TelaInicialController {
     // new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
   }
 
-  public void inicializarLeitor() {
+  public void inicializarLeitor(TelaInicialController telaInicialController) {
     // new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
     leitorArquivos.initialize();
+    leitorArquivos.addActionListners(new GerenciadorEventos(this));
     System.out.println("Verifica"+leitorArquivos.caminhoArquivo);
   }
 
@@ -45,11 +46,13 @@ class TelaInicialController {
     @Override
     public void actionPerformed(ActionEvent e) {
       if (e.getActionCommand().equals("Criar Evento")) {
+        TelaCorrida telaCorrida = new TelaCorrida();
+        telaCorrida.inicializar();
       }
       else if (e.getActionCommand().equals("MOSTRAR")) {
         System.out.println("AA");
       } else if (e.getActionCommand().equals("escolher")) {
-        inicializarLeitor();
+        inicializarLeitor(telaInicialController);
       }
     }
   }
