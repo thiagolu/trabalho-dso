@@ -10,36 +10,47 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class TelaInicialController implements ActionListener {
-  LeitorArquivos leitorArquivos;
+class TelaInicialController {
+  public LeitorArquivos leitorArquivos;
+  TelaCorrida telaCorrida;
   String caminho = "5";
+  TelaInicial tela;
 
   public TelaInicialController() {
     this.leitorArquivos = new LeitorArquivos();
+    this.telaCorrida = new TelaCorrida();
+    this.tela = new TelaInicial(this);
+    }
+
+  public void abre() {
+    tela.inicializar();
+    tela.setVisible(true);
+    tela.addActionListners(new GerenciadorEventos(this));
+    // new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
   }
 
   public void inicializarLeitor() {
+    // new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
     leitorArquivos.initialize();
+    System.out.println("Verifica"+leitorArquivos.caminhoArquivo);
   }
 
-  public void verificarLeitor() {
-    new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
-    System.out.println(leitorArquivos.caminhoArquivo);
-  }
+  private class GerenciadorEventos implements ActionListener{
+    TelaInicialController telaInicialController;
 
-
-
-  @Override
-  public void actionPerformed(ActionEvent e) {
-    if (e.getActionCommand().equals("Arquivo")) {
-      inicializarLeitor();
-      caminho = leitorArquivos.caminhoArquivo;
-    } else if (e.getActionCommand().equals("Criar Evento")) {
-      System.out.println("AAAA");
+    public GerenciadorEventos(TelaInicialController telaInicialController){
+      this.telaInicialController = telaInicialController;
     }
-    else if (e.getActionCommand().equals("MOSTRAR")) {
-     System.out.println(caminho);
-     verificarLeitor();
-   }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      if (e.getActionCommand().equals("Criar Evento")) {
+      }
+      else if (e.getActionCommand().equals("MOSTRAR")) {
+        System.out.println("AA");
+      } else if (e.getActionCommand().equals("escolher")) {
+        inicializarLeitor();
+      }
+    }
   }
 }

@@ -102,7 +102,11 @@ public class TelaCorrida extends JFrame{
   }
 
   private class GerenciadorEventos implements ActionListener {
+    TelaInicialController telaInicialController;
 
+    public GerenciadorEventos(TelaInicialController telaInicialController){
+      this.telaInicialController = telaInicialController;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
       if (e.getActionCommand().equals(btStop.getActionCommand())) {

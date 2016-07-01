@@ -9,6 +9,7 @@ class Main {
   }
 
   Main() {
-    TelaInicial tela = new TelaInicial();
+    TelaInicialController controller = new TelaInicialController();
+    controller.abre();
   }
 }

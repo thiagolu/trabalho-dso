@@ -17,19 +17,17 @@ public class TelaInicial extends JFrame{
   private Container container;
   private JButton btArquivo;
   private JButton btCriarEvento;
+  private JButton btEscolher;
   private JButton btMostrar;
   private JLabel rotuloP;
   private String caminho;
-  public TelaInicialController inicialController;
+  private TelaInicialController telaInicialController;
 
-  public TelaInicial(){
-    this.leitorArquivos = new LeitorArquivos();
+  public TelaInicial(TelaInicialController telaInicialController){
 
+    this.telaInicialController = telaInicialController;
     this.rotuloP = new JLabel("Selecione a opcao desejada");
-    this.inicialController = new TelaInicialController();
     this.container = getContentPane();
-
-    inicializar();
   }
 
   public void inicializar(){
@@ -38,21 +36,13 @@ public class TelaInicial extends JFrame{
     setLocationRelativeTo(null);
     JFrame cts = new JFrame();
     container.add(rotuloP);
-    setVisible(true);
 
 
-    btArquivo = new JButton("Arquivo");
     setSize(500,550);
     setTitle("Tela Inicial");
-    btArquivo.setPreferredSize(new Dimension(150, 20));
-    btArquivo.addActionListener(inicialController);
-    btArquivo.setActionCommand(btArquivo.getText());
-
-    container.add(btArquivo, cts);
 
     btCriarEvento = new JButton("Criar Evento");
     btCriarEvento.setPreferredSize(new Dimension(150, 20));
-    btCriarEvento.addActionListener(inicialController);
     btCriarEvento.setActionCommand(btCriarEvento.getText());
 
     container.add(btCriarEvento, cts);
@@ -60,15 +50,25 @@ public class TelaInicial extends JFrame{
 
     btMostrar = new JButton("MOSTRAR");
     btMostrar.setPreferredSize(new Dimension(150, 20));
-    btMostrar.addActionListener(inicialController);
     btMostrar.setActionCommand(btMostrar.getText());
 
     container.add(btMostrar, cts);
 
+    btEscolher = new JButton("escolher");
+    btEscolher.setPreferredSize(new Dimension(150, 20));
+    btEscolher.setActionCommand(btEscolher.getText());
+
+    container.add(btEscolher, cts);
   }
 
-  public void abrirEvento() {
-    TelaCorrida telaCorrida = new TelaCorrida();
-    telaCorrida.inicializar();
+  public void addActionListners(ActionListener e){
+    btCriarEvento.setActionCommand("Criar Evento");
+    btCriarEvento.addActionListener(e);
+    btMostrar.setActionCommand("MOSTRAR");
+    btMostrar.addActionListener(e);
+    btEscolher.setActionCommand("escolher");
+    btEscolher.addActionListener(e);
+
   }
+
 }

@@ -29,15 +29,12 @@ class LeitorArquivosController implements ActionListener {
     manipuladorArquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
     manipuladorArquivo.setAcceptAllFileFilterUsed(false);
-
-    if (e.getActionCommand().equals("Mostrar")) {
-      leitor.caminhoArquivo = this.caminhoArquivo;
-      System.out.println(leitor.caminhoArquivo);
-    }
-    else if (manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
+    if(manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
+      if (e.getActionCommand().equals("123")) {
+        System.out.println(leitor.caminhoArquivo);
+        leitor.caminhoArquivo = this.caminhoArquivo;
+      }
       this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
-      System.out.println(this.caminhoArquivo);
-      System.out.println("AAAAAA FOI?"+this.caminhoArquivo);
     }
     else {
       System.out.println("No Selection ");
