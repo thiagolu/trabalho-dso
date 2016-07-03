@@ -33,7 +33,7 @@ class TelaInicialController {
     // new ImportadorCSV(leitorArquivos.caminhoArquivo).importarCSV();
     leitorArquivos.initialize();
     leitorArquivos.addActionListners(new GerenciadorEventos(this));
-    System.out.println("Verifica"+leitorArquivos.caminhoArquivo);
+    System.out.println("Verifica"+leitorArquivos);
   }
 
   private class GerenciadorEventos implements ActionListener{

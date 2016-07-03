@@ -38,15 +38,15 @@ class LeitorArquivosController {
       manipuladorArquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
       manipuladorArquivo.setAcceptAllFileFilterUsed(false);
-      if (e.getActionCommand().equals("Escolher Arquivo")) {
-        // this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
-        System.out.println("No Selection ");
-
-      }
       if(manipuladorArquivo.showOpenDialog(manipuladorArquivo) == JFileChooser.APPROVE_OPTION) {
+        if (e.getActionCommand().equals("Escolher Arquivo")) {
+          this.caminhoArquivo = manipuladorArquivo.getSelectedFile().toString();
+          System.out.println("No Selection "+ manipuladorArquivo.getSelectedFile().toString());
+
+        }
       }
       else {
-        System.out.println("No Selection ");
+        System.out.println("Mostrou ");
       }
     }
   }
