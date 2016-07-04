@@ -16,7 +16,7 @@ class ImportadorCSV {
     CSVParser arquivoCSV = new CSVParser();
 
     corredores = arquivoCSV.parsearConteudoComVirgula(caminhoArquivo);
-
+    System.out.println("passou aqui");
     return corredores;
   }
 }
