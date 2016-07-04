@@ -16,6 +16,7 @@ class Cronometro implements ActionListener {
   public void disparar() {
 
     n = n + 1;
+    System.out.println(n);
     atualizar();
   }
   private boolean parado = true;
