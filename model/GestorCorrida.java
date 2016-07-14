@@ -31,7 +31,10 @@ public class GestorCorrida{
 
   public void saveCorredorQuatro(){
     resultados.add(0, corredores.get(3).nome);
-    System.out.println(corredores);
+  }
+
+  public void resultado() {
+    System.out.println(resultados);
   }
 
 }

@@ -85,16 +85,16 @@ class MenuCorrida extends JFrame {
 
     container.add(btFinalizar);
 
-    btCorredorUm = new JButton("Save Corredor 1");
+    btCorredorUm = new JButton("Colocado nº 1");
     container.add(btCorredorUm);
 
-    btCorredorDois = new JButton("Save Corredor 2");
+    btCorredorDois = new JButton("Colocado nº 2");
     container.add(btCorredorDois);
 
-    btCorredorTres = new JButton("Save Corredor 3");
+    btCorredorTres = new JButton("Colocado nº 3");
     container.add(btCorredorTres);
 
-    btCorredorQuatro = new JButton("Save Corredor 4");
+    btCorredorQuatro = new JButton("Colocado nº 4");
     container.add(btCorredorQuatro);
 
   }
