@@ -20,7 +20,6 @@ class LeitorArquivos extends JPanel {
 
   public LeitorArquivos() {
     this.escolherArquivo = new JButton(ESCOLHER_ARQUIVO);
-    this.mostrarConteudo = new JButton(MOSTRAR_CONTEUDO);
     this.frame = new JFrame("Frame -tls");
 
     inicializar();
@@ -32,13 +31,11 @@ class LeitorArquivos extends JPanel {
 
   public void inicializar() {
 
-    mostrarConteudo.setActionCommand(MOSTRAR_CONTEUDO);
     escolherArquivo.setActionCommand(ESCOLHER_ARQUIVO);
 
 
     frame.getContentPane().add(this,"Center");
     frame.setSize(new Dimension(200, 200));
-    add(mostrarConteudo);
     add(escolherArquivo);
 
   }
@@ -46,8 +43,6 @@ class LeitorArquivos extends JPanel {
   public void addActionListners(ActionListener e){
     escolherArquivo.setActionCommand(ESCOLHER_ARQUIVO);
     escolherArquivo.addActionListener(e);
-    mostrarConteudo.setActionCommand(MOSTRAR_CONTEUDO);
-    mostrarConteudo.addActionListener(e);
   }
 
 }
