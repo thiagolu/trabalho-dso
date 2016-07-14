@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -5,12 +6,23 @@ import java.awt.event.*;
 
 class Cronometro implements ActionListener {
   private int n = 0;
-  private JLabel r;
-  private javax.swing.Timer d; //disparos
+  public JLabel r;
+  private Timer d; //disparos
+  public ArrayList<Corredor> corredoresCadastrados;
 
   Cronometro(JLabel r) {
     this.r = r;
     d = new Timer(1, this);//periodos de 1 seg = 1000 ms
+  }
+
+  public void mostrarCorredorUm(){
+    System.out.println(corredoresCadastrados);
+
+  }
+
+  public void setarCorredores(ArrayList<Corredor> corredoresCadastrados) {
+    this.corredoresCadastrados = corredoresCadastrados;
+    System.out.println(corredoresCadastrados);
   }
 
   public void disparar() {
@@ -43,4 +55,7 @@ class Cronometro implements ActionListener {
 
   private boolean debug = true;
   void debug(String msg) { if (debug) System.out.println(msg);}
+
+
+
 }

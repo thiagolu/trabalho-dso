@@ -10,6 +10,7 @@ class ControladorMenuCorrida {
   public Cronometro cronometro;
   public HashMap<String, ArrayList<String>> corredores;
   public ArrayList<Corredor> corredoresCadastrados;
+  public GestorCorrida gestorCorrida;
 
 
 
@@ -22,9 +23,9 @@ class ControladorMenuCorrida {
 
   public void setarCorredores(ArrayList<Corredor> corredores) {
     this.corredoresCadastrados = corredores;
-    // System.out.println(corredores);
+    this.cronometro.setarCorredores(corredores);
+    this.gestorCorrida = new GestorCorrida(this.cronometro, this.corredoresCadastrados);
   }
-
 
   public void mostrarMenu(HashMap<String, ArrayList<String>> corredores) {
     System.out.println(corredores);
@@ -55,12 +56,23 @@ class ControladorMenuCorrida {
           System.out.println("Parar");
           cronometro.pausar();
         } else if (e.getActionCommand().equals(MenuCorrida.FINALIZAR)) {
-            System.out.println(corredoresCadastrados);
+            System.out.println(controladorMenuCorrida.cronometro.corredoresCadastrados);
             // controladorMenuCorrida.esconderMenu();
-
           }
-          else {
-            System.out.println("NADA");
+          else if (e.getActionCommand().equals("1")) {
+            controladorMenuCorrida.gestorCorrida.saveCorredorUm();
+           }
+          else if (e.getActionCommand().equals("2")) {
+            controladorMenuCorrida.gestorCorrida.saveCorredorDois();
+            System.out.println("Botao 2");
+          }
+          else if (e.getActionCommand().equals("3")) {
+            controladorMenuCorrida.gestorCorrida.saveCorredorTres();
+            System.out.println("Botao 3");
+          }
+          else if (e.getActionCommand().equals("4")) {
+            controladorMenuCorrida.gestorCorrida.saveCorredorQuatro();
+            System.out.println("Botao 4");
           }
     }
   }

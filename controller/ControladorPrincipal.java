@@ -43,6 +43,7 @@ class ControladorPrincipal {
     public void actionPerformed(ActionEvent e) {
 
       if (e.getActionCommand().equals(INICIAR_EVENTO)) {
+        controladorMenuCorrida.setarCorredores(corredores);
         controladorMenuCorrida.mostrarMenu(controladorLeitorArquivos.corredores);
         System.out.println(INICIAR_EVENTO);
 
@@ -52,8 +53,6 @@ class ControladorPrincipal {
 
         } else if (e.getActionCommand().equals(MOSTRAR_CORREDORES)) {
           corredores = controladorCadastros.cadastrarCorredores(controladorLeitorArquivos.corredores);
-          controladorMenuCorrida.setarCorredores(corredores);
-          System.out.println(corredores);
         }
           else {
             System.out.println("NADA");

@@ -23,6 +23,10 @@ class MenuCorrida extends JFrame {
   private JButton btStart;
   private JButton btStop;
   private JButton btFinalizar;
+  private JButton btCorredorUm;
+  private JButton btCorredorDois;
+  private JButton btCorredorTres;
+  private JButton btCorredorQuatro;
 
   private Cronometro cronometro;
 
@@ -81,23 +85,17 @@ class MenuCorrida extends JFrame {
 
     container.add(btFinalizar);
 
-    JButton b;
+    btCorredorUm = new JButton("Save Corredor 1");
+    container.add(btCorredorUm);
 
-    b = new JButton("Save Corredor 1");
-    container.add(b);
-    b.setActionCommand("sal");
+    btCorredorDois = new JButton("Save Corredor 2");
+    container.add(btCorredorDois);
 
-    b = new JButton("Save Corredor 2");
-    container.add(b);
-    b.setActionCommand("sal");
+    btCorredorTres = new JButton("Save Corredor 3");
+    container.add(btCorredorTres);
 
-    b = new JButton("Save Corredor 3");
-    container.add(b);
-    b.setActionCommand("sal");
-
-    b = new JButton("Save Corredor 4");
-    container.add(b);
-    b.setActionCommand("sal");
+    btCorredorQuatro = new JButton("Save Corredor 4");
+    container.add(btCorredorQuatro);
 
   }
 
@@ -108,6 +106,15 @@ class MenuCorrida extends JFrame {
     btStop.addActionListener(e);
     btFinalizar.setActionCommand("Finalizar");
     btFinalizar.addActionListener(e);
+    btCorredorUm.setActionCommand("1");
+    btCorredorUm.addActionListener(e);
+    btCorredorDois.setActionCommand("2");
+    btCorredorDois.addActionListener(e);
+    btCorredorTres.setActionCommand("3");
+    btCorredorTres.addActionListener(e);
+    btCorredorQuatro.setActionCommand("4");
+    btCorredorQuatro.addActionListener(e);
+
   }
 
 
