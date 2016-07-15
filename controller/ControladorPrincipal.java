@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 class ControladorPrincipal {
   public static final String INICIAR_EVENTO = "Iniciar Evento";
   public static final String SELECIONAR_ARQUIVO = "Selecionar Arquivo";
-  public static final String MOSTRAR_CORREDORES = "Mostrar Corredores";
+  public static final String CADASTRAR_CORREDORES = "Cadastrar Corredores";
 
 
   private MenuInicial menuInicial;
@@ -51,7 +51,7 @@ class ControladorPrincipal {
           System.out.println(SELECIONAR_ARQUIVO);
           controladorLeitorArquivos.mostrarMenu();
 
-        } else if (e.getActionCommand().equals(MOSTRAR_CORREDORES)) {
+        } else if (e.getActionCommand().equals(CADASTRAR_CORREDORES)) {
           corredores = controladorCadastros.cadastrarCorredores(controladorLeitorArquivos.corredores);
         }
           else {

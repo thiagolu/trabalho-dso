@@ -85,16 +85,16 @@ class MenuCorrida extends JFrame {
 
     container.add(btFinalizar);
 
-    btCorredorUm = new JButton("Colocado nº 1");
+    btCorredorUm = new JButton("[ Parar corredor 1 ]");
     container.add(btCorredorUm);
 
-    btCorredorDois = new JButton("Colocado nº 2");
+    btCorredorDois = new JButton("[ Parar corredor 2 ]");
     container.add(btCorredorDois);
 
-    btCorredorTres = new JButton("Colocado nº 3");
+    btCorredorTres = new JButton("[ Parar corredor 3 ]");
     container.add(btCorredorTres);
 
-    btCorredorQuatro = new JButton("Colocado nº 4");
+    btCorredorQuatro = new JButton("[ Parar corredor 4 ]");
     container.add(btCorredorQuatro);
 
   }
@@ -114,8 +114,5 @@ class MenuCorrida extends JFrame {
     btCorredorTres.addActionListener(e);
     btCorredorQuatro.setActionCommand("4");
     btCorredorQuatro.addActionListener(e);
-
   }
-
-
 }

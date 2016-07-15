@@ -21,7 +21,7 @@ class CSVParser {
       this.arquivoCSV = new BufferedReader(new FileReader(caminhoArquivo));
 
       while ((linha = this.arquivoCSV.readLine()) != null) {
-        String[] corredores = linha.split(separadorCSV);
+        String[] corredores = linha.trim().split(separadorCSV);
         cadastroCorredores.put(corredores[2], new ArrayList<String>(Arrays.asList(corredores[0],corredores[1])));
       }
 

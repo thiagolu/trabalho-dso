@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 class MenuInicial extends JFrame {
   public static final String INICIAR_EVENTO = "Iniciar Evento";
   public static final String SELECIONAR_ARQUIVO = "Selecionar Arquivo";
-  public static final String MOSTRAR_CORREDORES = "Mostrar Corredores";
+  public static final String CADASTRAR_CORREDORES = "Cadastrar Corredores";
 
 
   private Container container;
@@ -55,7 +55,7 @@ class MenuInicial extends JFrame {
     btSelecionarArquivo = new JButton(SELECIONAR_ARQUIVO);
     btSelecionarArquivo.setPreferredSize(new Dimension(200,20));
 
-    btMostrarCorredores = new JButton(MOSTRAR_CORREDORES);
+    btMostrarCorredores = new JButton(CADASTRAR_CORREDORES);
     btMostrarCorredores.setPreferredSize(new Dimension(200,20));
     btIniciarEvento.setActionCommand(btIniciarEvento.getText());
     btSelecionarArquivo.setActionCommand(btSelecionarArquivo.getText());
@@ -75,7 +75,7 @@ class MenuInicial extends JFrame {
     btSelecionarArquivo.setActionCommand(SELECIONAR_ARQUIVO);
     btSelecionarArquivo.addActionListener(e);
 
-    btMostrarCorredores.setActionCommand(MOSTRAR_CORREDORES);
+    btMostrarCorredores.setActionCommand(CADASTRAR_CORREDORES);
     btMostrarCorredores.addActionListener(e);
   }
 }
