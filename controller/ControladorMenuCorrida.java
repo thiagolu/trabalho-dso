@@ -55,6 +55,7 @@ class ControladorMenuCorrida {
       } else if (e.getActionCommand().equals(MenuCorrida.PARAR)) {
         cronometro.pausar();
       } else if (e.getActionCommand().equals(MenuCorrida.FINALIZAR)) {
+        cronometro.pausar();
         controladorMenuCorrida.gestorCorrida.resultado();
         // controladorMenuCorrida.esconderMenu();
       }

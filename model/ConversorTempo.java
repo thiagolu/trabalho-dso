@@ -8,9 +8,9 @@ class ConversorTempo  {
 
   public String converter(int n) {
     int milesimos = n % 1000;
-    int segundos = ( n / 1000 ) % 60;      // se não precisar de segundos, basta remover esta linha.
-    int minutos  = ( n / 60000 ) % 60;     // 60000   = 60 * 1000
-    int horas    = n / 3600000;            // 3600000 = 60 * 60 * 1000
+    int segundos = ( n / 1000 ) % 60;
+    int minutos  = ( n / 60000 ) % 60;
+    int horas    = n / 3600000;
     return horas+" h "+minutos+" min "+segundos+" s "+milesimos+ " ms";
   }
 }

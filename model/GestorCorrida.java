@@ -31,7 +31,6 @@ public class GestorCorrida{
   }
 
   public void resultado() {
-
     try {
       PrintWriter writer = new PrintWriter("resultado.txt", "UTF-8");
       String primeiroLugar = resultados.get(0);

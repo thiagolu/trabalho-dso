@@ -1,7 +1,7 @@
 import java.util.*;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -53,7 +53,7 @@ class MenuCorrida extends JFrame {
     JButton bt;
 
     for(Corredor c : corredores){
-      bt = new JButton(c.nome);
+      bt = new JButton("nº"+c.id);
       bt.setActionCommand(c.id);
       bt.addActionListener(e);
       container.add(bt);
@@ -62,7 +62,7 @@ class MenuCorrida extends JFrame {
 
   public void inicializar(){
 
-    container.setLayout(new FlowLayout());
+    container.setLayout(new GridBagLayout());
 
     rotulo = new JLabel("Tempo: ");
     container.add(rotulo);
