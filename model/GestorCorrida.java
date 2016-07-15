@@ -1,4 +1,7 @@
 import java.util.*;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class GestorCorrida{
 
@@ -6,63 +9,45 @@ public class GestorCorrida{
   private ArrayList<Corredor> corredores;
   private ArrayList<String> resultados;
 
-
-
   public GestorCorrida(Cronometro cronometro, ArrayList<Corredor> corredores){
     this.cronometro = cronometro;
     this.corredores = corredores;
     this.resultados = new ArrayList<String>();
   }
 
-  public void saveCorredorUm(){
-    resultados.add("1");
-    System.out.println(resultados);
+  public void saveCorredor(String id) {
+    resultados.add(id);
   }
 
-  public void saveCorredorDois(){
-    resultados.add("2");
-    System.out.println(resultados);
-  }
-
-  public void saveCorredorTres(){
-    resultados.add("3");
-    System.out.println(resultados);
-  }
-
-  public void saveCorredorQuatro(){
-    resultados.add("4");
-    System.out.println(resultados);
-  }
-
-  public void saveCorredorCinco(){
-    resultados.add("5");
-    System.out.println(resultados);
-  }
-
-
-  public void saveCorredorSeis(){
-    resultados.add("6");
-    System.out.println(resultados);
-  }
-
-
-  public void saveCorredorSete(){
-    resultados.add("7");
-    System.out.println(resultados);
-  }
-
-  public void resultado(HashMap<String, ArrayList<String>> lista) {
-    String primeiroLugar = resultados.get(0);
-    String segundoLugar = resultados.get(1);
+  public Corredor retornaCorredorPorId(String id) {
+    Corredor corredor = null;
 
     for(Corredor c : corredores){
-      String idCorredor = c.id.replace("\"", "");
-      if(primeiroLugar.equals(idCorredor)) {
-        System.out.println("Primeiro Lugar"+c.nome);
-      } else if (segundoLugar.equals(idCorredor)) {
-        System.out.println("Segundo Lugar"+c.nome);
-
+      if(id.equals(c.id)) {
+        corredor = c;
       }
+    }
+    return corredor;
+  }
+
+  public void resultado() {
+
+    try {
+      PrintWriter writer = new PrintWriter("resultado.txt", "UTF-8");
+      String primeiroLugar = resultados.get(0);
+      String segundoLugar = resultados.get(1);
+      int posicao = 1;
+      for(String r : resultados){
+        Corredor c = retornaCorredorPorId(r);
+        writer.println("Colocado número: "+posicao);
+        writer.println(c.nome);
+        posicao += 1;
+      }
+      writer.close();
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
     }
   }
 }

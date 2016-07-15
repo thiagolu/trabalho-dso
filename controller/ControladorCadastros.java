@@ -18,7 +18,7 @@ class ControladorCadastros {
     for (String e : cadastroCorredores.keySet() ) {
       String nome = cadastroCorredores.get(e).get(0);
       String idade = cadastroCorredores.get(e).get(1);
-      corredor = new Corredor(nome, e, idade);
+      corredor = new Corredor(nome.replace("\"", ""), e.replace("\"", ""), idade.replace("\"", ""));
       corredores.add(corredor);
     }
 

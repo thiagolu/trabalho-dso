@@ -1,0 +1,8 @@
+Colocado número: 1
+Corredor 7
+Colocado número: 2
+Corredor 4
+Colocado número: 3
+Corredor 6
+Colocado número: 4
+Corredor 3

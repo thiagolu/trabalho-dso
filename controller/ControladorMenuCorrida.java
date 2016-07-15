@@ -28,9 +28,8 @@ class ControladorMenuCorrida {
   }
 
   public void mostrarMenu(HashMap<String, ArrayList<String>> corredores) {
-    System.out.println(corredores);
-    this.menuCorrida.mostrar(corredores);
-    this.corredores = corredores;
+    this.menuCorrida.mostrar();
+    this.menuCorrida.criarBotoesCorredores(corredoresCadastrados, gerenciadorEventos);
     this.menuCorrida.addActionListners(gerenciadorEventos);
   }
 
@@ -52,34 +51,40 @@ class ControladorMenuCorrida {
     public void actionPerformed(ActionEvent e) {
 
       if (e.getActionCommand().equals(MenuCorrida.INICIAR_CORRIDA)) {
-        System.out.println("Iniciar CoRRida");
         cronometro.avancar();
       } else if (e.getActionCommand().equals(MenuCorrida.PARAR)) {
-          System.out.println("Parar");
-          cronometro.pausar();
-        } else if (e.getActionCommand().equals(MenuCorrida.FINALIZAR)) {
-            controladorMenuCorrida.gestorCorrida.resultado(controladorMenuCorrida.corredores);
-            // controladorMenuCorrida.esconderMenu();
-          }
-          else if (e.getActionCommand().equals("1")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorUm();
-           }
-          else if (e.getActionCommand().equals("2")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorDois();
-          }
-          else if (e.getActionCommand().equals("3")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorTres();
-          }
-          else if (e.getActionCommand().equals("4")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorQuatro();
-          }
-
-          else if (e.getActionCommand().equals("5")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorCinco();
-          }
-          else if (e.getActionCommand().equals("6")) {
-            controladorMenuCorrida.gestorCorrida.saveCorredorSeis();
-          }
+        cronometro.pausar();
+      } else if (e.getActionCommand().equals(MenuCorrida.FINALIZAR)) {
+        controladorMenuCorrida.gestorCorrida.resultado();
+        // controladorMenuCorrida.esconderMenu();
+      }
+      else if (e.getActionCommand().equals("1")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("1");
+      }
+      else if (e.getActionCommand().equals("2")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("2");
+      }
+      else if (e.getActionCommand().equals("3")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("3");
+      }
+      else if (e.getActionCommand().equals("4")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("4");
+      }
+      else if (e.getActionCommand().equals("5")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("5");
+      }
+      else if (e.getActionCommand().equals("6")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("6");
+      }
+      else if (e.getActionCommand().equals("7")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("7");
+      }
+      else if (e.getActionCommand().equals("8")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("8");
+      }
+      else if (e.getActionCommand().equals("9")) {
+        controladorMenuCorrida.gestorCorrida.saveCorredor("9");
+      }
     }
   }
 }

@@ -23,10 +23,6 @@ class MenuCorrida extends JFrame {
   private JButton btStart;
   private JButton btStop;
   private JButton btFinalizar;
-  private JButton btCorredorUm;
-  private JButton btCorredorDois;
-  private JButton btCorredorTres;
-  private JButton btCorredorQuatro;
 
   private Cronometro cronometro;
 
@@ -41,9 +37,7 @@ class MenuCorrida extends JFrame {
     inicializar();
   }
 
-  public void mostrar(HashMap<String, ArrayList<String>> corredores) {
-    this.rotuloCorredores = new JLabel(corredores.toString());
-    container.add(rotuloCorredores);
+  public void mostrar() {
     this.setVisible(true);
   }
 
@@ -53,6 +47,17 @@ class MenuCorrida extends JFrame {
 
   public JLabel getRotuloCronometro() {
     return rotuloCronometro;
+  }
+
+  public void criarBotoesCorredores(ArrayList<Corredor> corredores, ActionListener e) {
+    JButton bt;
+
+    for(Corredor c : corredores){
+      bt = new JButton(c.nome);
+      bt.setActionCommand(c.id);
+      bt.addActionListener(e);
+      container.add(bt);
+    }
   }
 
   public void inicializar(){
@@ -84,19 +89,6 @@ class MenuCorrida extends JFrame {
     btFinalizar.setPreferredSize(new Dimension(150, 20));
 
     container.add(btFinalizar);
-
-    btCorredorUm = new JButton("[ Parar corredor 1 ]");
-    container.add(btCorredorUm);
-
-    btCorredorDois = new JButton("[ Parar corredor 2 ]");
-    container.add(btCorredorDois);
-
-    btCorredorTres = new JButton("[ Parar corredor 3 ]");
-    container.add(btCorredorTres);
-
-    btCorredorQuatro = new JButton("[ Parar corredor 4 ]");
-    container.add(btCorredorQuatro);
-
   }
 
   public void addActionListners(ActionListener e){
@@ -106,13 +98,5 @@ class MenuCorrida extends JFrame {
     btStop.addActionListener(e);
     btFinalizar.setActionCommand("Finalizar");
     btFinalizar.addActionListener(e);
-    btCorredorUm.setActionCommand("1");
-    btCorredorUm.addActionListener(e);
-    btCorredorDois.setActionCommand("2");
-    btCorredorDois.addActionListener(e);
-    btCorredorTres.setActionCommand("3");
-    btCorredorTres.addActionListener(e);
-    btCorredorQuatro.setActionCommand("4");
-    btCorredorQuatro.addActionListener(e);
   }
 }
